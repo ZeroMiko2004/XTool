@@ -150,26 +150,6 @@ Engines\     NW.js SDK + corescript MV/MZ
 
 ---
 
-## Добавить свой переводчик / ИИ-движок
-
-Код открыт. Движок — это один файл рядом с программой:
-
-```python
-# engine_my.py
-ID = "my"
-TITLE = "Мой движок"
-HINT = "подсказка для интерфейса"
-OPTIONS = []           # поля настроек для вкладки «Перевод»
-DEPS = []              # pip-пакеты, если нужны
-
-import core as C
-class Translator(C.Engine):
-    def prepare(self): ...
-    def translate_many(self, texts): ...   # список строк -> список переводов
-```
-
-Добавь имя файла в `core.ENGINE_FILES` — и он появится в списке движков.
-
 ## Зависимости (pip, ставятся в свой venv)
 
 `argostranslate`, `ctranslate2`, `sentencepiece`, `tkinterdnd2`, `pillow`,
